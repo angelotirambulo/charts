@@ -18,15 +18,15 @@ main{
 
 .website-name{
 	font-family: 'Roboto', sans-serif;
-	font-size: 18px;
+	font-size: 80px;
 	font-weight: 900;
-	letter-spacing:1.5px ;
+	letter-spacing:4px ;
 	text-transform: uppercase;
 }
 
 .website-tagline{
 	font-family: 'Yrsa', serif;
-	font-size: 12px;
+	font-size: 40px;
 	font-weight:400;
 	letter-spacing: 0px;
 	text-transform: lowercase;
@@ -38,7 +38,7 @@ main{
 
 .intro-text{
 	font-family: 'Yrsa', serif;
-	font-size: 36px;
+	font-size: 100px;
 	line-height:1.10;
 	font-weight:300;
 
