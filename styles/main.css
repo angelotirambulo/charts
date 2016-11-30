@@ -1,0 +1,46 @@
+body{
+	width: 100%;
+	
+}
+
+main{
+	width: 80%;
+}
+
+
+.container{ 
+  	display: flex;
+  	margin: 4%;
+  	align-items: flex-end; 
+	display: flex; 
+	justify-content: space-between;
+}
+
+.website-name{
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	font-weight: 900;
+	letter-spacing:1.5px ;
+	text-transform: uppercase;
+}
+
+.website-tagline{
+	font-family: 'Yrsa', serif;
+	font-size: 12px;
+	font-weight:400;
+	letter-spacing: 0px;
+	text-transform: lowercase;
+	margin-top:1%;
+}
+main{
+	margin:0 4%;
+}
+
+.intro-text{
+	font-family: 'Yrsa', serif;
+	font-size: 36px;
+	line-height:1.10;
+	font-weight:300;
+
+
+}
