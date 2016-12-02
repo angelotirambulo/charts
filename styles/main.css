@@ -4,13 +4,15 @@ body{
 }
 
 main{
-	width: 80%;
+	width: 100%;
+
+	
 }
 
 
 .container{ 
   	display: flex;
-  	margin: 6% 4% 6% 4%;
+  	margin: 10% 4% 6% 4%;
   	align-items: flex-end; 
 	display: flex; 
 	justify-content: space-between;
@@ -18,7 +20,7 @@ main{
 
 .website-name{
 	font-family: 'Roboto', sans-serif;
-	font-size: 30px;
+	font-size: 18px;
 	font-weight: 900;
 	letter-spacing:4px ;
 	text-transform: uppercase;
@@ -26,33 +28,83 @@ main{
 
 .website-tagline{
 	font-family: 'Yrsa', serif;
-	font-size: 18px;
+	font-size: 12px;
 	font-weight:400;
 	letter-spacing: 0px;
 	text-transform: lowercase;
 	margin-top:1%;
 }
-main{
-margin-left: 4%;
-	
-	
-}
+
 
 .intro-text{
+	width: 90%;
+	margin-left: 4%;
 	font-family: 'Yrsa', serif;
-	font-size: 45px;
+	font-size: 40px;
 	letter-spacing: -3%
 	line-height:1.10;
 	font-weight:300;
 	padding-bottom:100%;
-
-	
 }
 
 .creative-process{
-	position: absolute;
-    width: 100%;
-    left: 0;
-	background: gray;
-	min-height: 600px;
+background-color: rgba(189,16,224,.05);
+width: 100%;
+left: 0;
+
+	
+	
 }
+
+.creative-process-container{
+width:100%;
+align-items: flex-end; 
+display: flex; 
+justify-content: center;
+/*border: solid 1px black;
+*/padding: 4% 0;
+}
+
+.full-circle-container{
+width:100%;
+align-items: flex-end; 
+display: flex; 
+justify-content: center;
+/*border: solid 1px black;
+*/padding: 6% 0;
+
+}
+.full-circle {
+position: relative;
+border-radius: 50%;
+width: 80%;
+height: auto;
+padding-top: 80%;
+background: white;
+}
+
+ 
+
+
+
+.reg-day{
+	
+background-color: rgba(208,2,27,.05); 	
+width: 100%;
+left: 0;
+min-height: 600px;
+	
+	 
+}
+.shots{
+background-color: rgba(126,211,33,.05); 	
+width: 100%;
+left: 0;
+min-height: 600px;
+	
+}
+
+
+
+
+
