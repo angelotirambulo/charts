@@ -1,6 +1,7 @@
 body{
 	width: 100%;
 	
+	
 }
 
 main{
@@ -8,7 +9,6 @@ main{
 
 	
 }
-
 
 .container{ 
   	display: flex;
@@ -33,6 +33,21 @@ main{
 	letter-spacing: 0px;
 	text-transform: lowercase;
 	margin-top:1%;
+}
+
+.nav-container{
+display: flex;
+ margin-bottom: 3%;
+ align-items: flex-end; 
+display: flex; 
+justify-content: space-between;
+}
+ul {
+font-family: 'Yrsa', serif;
+font-size: 12px;
+font-weight:400;
+justify-content: flex-end;
+	margin-right: 4%;
 }
 
 
