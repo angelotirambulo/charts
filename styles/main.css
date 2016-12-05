@@ -1,0 +1,164 @@
+body{
+	width: 100%;
+	
+}
+
+main{
+	width: 100%;
+
+	
+}
+
+
+.container{ 
+  	display: flex;
+  	margin: 10% 4% 6% 4%;
+  	align-items: flex-end; 
+	display: flex; 
+	justify-content: space-between;
+}
+
+.website-name{
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	font-weight: 900;
+	letter-spacing:4px ;
+	text-transform: uppercase;
+}
+
+.website-tagline{
+	font-family: 'Yrsa', serif;
+	font-size: 12px;
+	font-weight:400;
+	letter-spacing: 0px;
+	text-transform: lowercase;
+	margin-top:1%;
+}
+
+
+.intro-text{
+	width: 90%;
+	margin-left: 4%;
+	font-family: 'Yrsa', serif;
+	font-size: 40px;
+	letter-spacing: -3%
+	line-height:1.10;
+	font-weight:300;
+	padding-bottom:30%;
+}
+
+.creative-process{
+background-color: rgba(189,16,224,.05);
+width: 100%;
+left: 0;
+padding-bottom: 100%;
+
+}
+
+.charts-header-text{
+	font-family: 'Yrsa', serif;
+	font-size: 24px;
+
+}
+
+.creative-process-container{
+width:100%;
+align-items: flex-end; 
+display: flex; 
+justify-content: center;
+/*border: solid 1px black;
+*/padding: 10% 0 10% 0;
+}
+
+.box-container{
+ display: -webkit-box;
+ display: -moz-box;
+ display: -ms-flexbox;
+ display: -webkit-flex;
+ display: flex;
+
+
+
+
+}
+.box-dicking-around{
+width: 20%;
+padding: 2% 1%;
+border: solid 4px #E986E6;
+margin-left:60%;
+}
+
+.text-box{
+font-family: 'Roboto', sans-serif;
+font-size: 16px;
+font-weight: 900;
+text-transform: uppercase;
+text-align: center;
+
+}
+
+
+.full-circle-container{
+width:100%;
+align-items: flex-end; 
+display: flex; 
+justify-content: center;
+/*border: solid 1px black;
+*/padding: 6% 0;
+
+}
+.full-circle {
+position: relative;
+border-radius: 50%;
+width: 80%;
+height: auto;
+padding-top: 80%;
+background: #E986E6;
+}
+.line1 {
+width: 200px;
+height: 0px;
+border-bottom: 8px solid black;
+-webkit-transform:
+translateY(5%)
+translateX(70%)
+rotate(50deg); 
+position: absolute;
+}
+
+.box-making-shit{
+width: 20%;
+padding: 2% 1%;
+border: solid 4px black;
+margin-left:4%;
+}
+.text-making-shit{
+	color: #E986E6;
+}
+
+
+ 
+
+
+
+.reg-day{
+	
+background-color: rgba(208,2,27,.05); 	
+width: 100%;
+left: 0;
+min-height: 600px;
+	
+	 
+}
+.shots{
+background-color: rgba(126,211,33,.05); 	
+width: 100%;
+left: 0;
+min-height: 600px;
+	
+}
+
+
+
+
+
