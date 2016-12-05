@@ -1,27 +1,21 @@
-body,main{
+body{
 	width: 100%;
-}
-
-header{
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-background-color: rgba(255,255,255,.75);
- z-index: 9;
+	
 }
 
 main{
-	padding-top:23%;
+	width: 100%;
+
+	
 }
 
 
-.container-header{ 
+.container{ 
   	display: flex;
   	margin: 10% 4% 6% 4%;
   	align-items: flex-end; 
+	display: flex; 
 	justify-content: space-between;
-
 }
 
 .website-name{
@@ -41,61 +35,68 @@ main{
 	margin-top:1%;
 }
 
-.container-main{
-	position: relative;
-	width: 100%;
-	vertical-align: top;
-	float:left;
-clear:none;
-
-
-
-
-}
-.content-main{
-	width: 90%;
-	margin:4% 4% 0% 4%;
-/*	border: solid 1px black;
-*/	
-
-	
-}
 
 .intro-text{
-	padding-bottom: 50%;
-}
-
-.intro-text-text{
-	
-font-family: 'Yrsa', serif;
-font-size: 40px;
-font-weight:300;
-letter-spacing: -3%
-line-height:1.10;
-	
+	width: 90%;
+	margin-left: 4%;
+	font-family: 'Yrsa', serif;
+	font-size: 40px;
+	letter-spacing: -3%
+	line-height:1.10;
+	font-weight:300;
+	padding-bottom:30%;
 }
 
 .creative-process{
 background-color: rgba(189,16,224,.05);
+width: 100%;
+left: 0;
+padding-bottom: 100%;
+
 }
-
-
-.container-charts-header{
-width:100%;
-align-items: flex-end; 
-display: flex; 
-justify-content: center;
-/*border: solid 1px black;*/
-padding: 12% 0 10% 0;
-}
-
-
 
 .charts-header-text{
 	font-family: 'Yrsa', serif;
 	font-size: 24px;
-	font-weight:300;
+
 }
+
+.creative-process-container{
+width:100%;
+align-items: flex-end; 
+display: flex; 
+justify-content: center;
+/*border: solid 1px black;
+*/padding: 10% 0 10% 0;
+}
+
+.box-container{
+ display: -webkit-box;
+ display: -moz-box;
+ display: -ms-flexbox;
+ display: -webkit-flex;
+ display: flex;
+
+
+
+
+}
+.box-dicking-around{
+width: 20%;
+padding: 2% 1%;
+border: solid 4px #E986E6;
+margin-left:60%;
+}
+
+.text-box{
+font-family: 'Roboto', sans-serif;
+font-size: 16px;
+font-weight: 900;
+text-transform: uppercase;
+text-align: center;
+
+}
+
 
 .full-circle-container{
 width:100%;
@@ -114,45 +115,47 @@ height: auto;
 padding-top: 80%;
 background: #E986E6;
 }
+.line1 {
+width: 200px;
+height: 0px;
+border-bottom: 8px solid black;
+-webkit-transform:
+translateY(5%)
+translateX(70%)
+rotate(50deg); 
+position: absolute;
+}
 
-.box-dicking-around{
+.box-making-shit{
 width: 20%;
 padding: 2% 1%;
-border: solid 4px #E986E6;
-margin-left:60%;
+border: solid 4px black;
+margin-left:4%;
 }
-
-.text-box{
-font-family: 'Roboto', sans-serif;
-font-size: 16px;
-font-weight: 900;
-text-transform: uppercase;
-text-align: center;
-
+.text-making-shit{
+	color: #E986E6;
 }
 
 
-.container-infographic{
-width:100%;
-align-items: flex-end; 
-display: flex; 
-justify-content: center;
-/*border: solid 1px black;
-*/}
-
-
+ 
 
 
 
 .reg-day{
+	
 background-color: rgba(208,2,27,.05); 	
-
+width: 100%;
+left: 0;
+min-height: 600px;
+	
+	 
 }
-
 .shots{
-
 background-color: rgba(126,211,33,.05); 	
-
+width: 100%;
+left: 0;
+min-height: 600px;
+	
 }
 
 
