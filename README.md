@@ -11,6 +11,7 @@
 <strong> JS</strong>
 <br>http://imakewebthings.com/waypoints/
 <br>http://chartjs.org
+<br>https://css-tricks.com/scroll-fix-content/
 
 
 <strong>links</strong>
