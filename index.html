@@ -1,91 +1,105 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
-<head>
-	<title>Charts</title>
-	<meta name='viewport' content='width=device-width, initial-scale=1.0;'>
-	<link rel="stylesheet" href="styles/reset.css">
-	<link rel="stylesheet" href="styles/main.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100i,300,300i,400,400i,500,500i,700,700i,900,900i|Yrsa:300,400,500,600,700" rel="stylesheet">
-</head>
+    <head>
+        <title>Charts</title>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <link rel="stylesheet" href="styles/reset.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100i,300,300i,400,400i,500,500i,700,700i,900,900i|Yrsa:300,400,500,600,700" rel="stylesheet">
+    </head>
+    <body>
+ 
+        <div class="headerwrap" >
 
-<body>
-	<header>
-		<div class="container">
-			<div class="container-websitename-logo">
-				<h1 class="website-name">Charts <p class="website-tagline">about nothing/everything</div></div>
-				
-				<div class="nav"></div>
-			</div>
-			
+            <div class="container-header">
+                <div class="container-websitename-logo">
+                    <h1 class="website-name">
+                        Charts 
+                        <p class="website-tagline">about nothing/everything
+                        </div>
+                </div>
+                <div class="nav-container"> </div>
+            </div>
+            </div>
+        </div>
+        </header>
+    <main>
+        <div class="container-main">
+            <div class="content-main intro-text">
+                <p class="intro-text-text">
+                    None of the charts are based on any scientific information. Everything is based on non-sense and sophmoric humor.
+                </p>
+            </div>
+        </div>
 
-			</div>
-	</header>
-
-	<main>
-
-		<div class="intro-text">
-			None of the charts are based on any scientific information. Everything is based on non-sense and sophmoric humor.
-				
-		</div>
+        <div class="container-main creative-process">
+            <div class="content-main">
+                <div class=" container-charts-header">
+                    <p class="charts-header-text"> The Creative Process
+                    </p>
+                </div>
 
 
-		<div class="creative-process">
-			<div class="charts-container">		
-				<div class="charts-header-text">
-				Creative Process
-				</div>
-			</div>
 
-			<div class="box-container">
-				<div class="box-dicking-around"> 
-					<p class="text-box">Dicking Around </p>
-				</div>
+                <div class="container-infographic">
 
-			</div>
+                    <div class="box-container">
+                        <div class="box dicking-around-color">
+                            <p class="text-box">Dicking Around </p>
+                        </div>
+                    </div>
 
-			<div class="full-circle-container">
-				
-				
-					
-				<div class="full-circle"></div>
-					
-				
-				
-			</div>
+                    <div class="full-circle-container">
+                      
+                      <canvas id="myChart" width="400" height="400"></canvas>
+                    </div>
 
-			<div class="line1"></div>
-			<div class="box-container">
-				<div class="box-making-shit"> 
-					<p class="text-box text-making-shit">Making Shit</p>
-				</div>
+                    <div class="box-container">
+                        <div class="box makingshit-color">
+                            <p class="text-box">Making Shit</p>
+                        </div>
 
-				
-			</div>
-		</div>
-				
-			</div>
-			<div class="reg-day">
-			<div class="charts-container">		
-				<div class="charts-header-text">
-				A Regular Day
-				</div>
-			</div>
 
-				
-			</div>
+                    </div>
+                </div>
+                 </div>
 
-			<div class="shots">
-			<div class="charts-container">		
-				<div class="charts-header-text">
-				The Effects of Shots
-				</div>
-			</div>
 
-				
-			</div>
-		</main>
-		
-	
 
+
+
+
+        </div>
+        </div>
+    <div class="container-main reg-day">
+        <div class="content-main">
+            <div class=" container-charts-header">
+                <p class="charts-header-text"> A Regular Day</p>
+            </div>
+            <div class="container-infographic">
+            <canvas id="myLineChart" width="400" height="400"></canvas>
+                
+            </div>
+        </div>
+    </div>
+    <div class="container-main shots">
+        <div class="content-main">
+            <div class=" container-charts-header">
+                <p class="charts-header-text"> The effect of shots</p>
+            </div>
+            <div class="container-infographic">
+                <img src="source/shots.png">
+            </div>
+        </div>
+    </div>
+    </main>
+<footer>
+</footer>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js'></script>
+
+    <script src='javascript/main.js'></script>
 </body>
 </html>

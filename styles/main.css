@@ -1,22 +1,47 @@
-body{
+body,main{
 	width: 100%;
-	
 }
+
+.headerwrap{
+position: fixed;
+top:0;
+z-index: 9;
+top: 0;
+left: 0;
+width: 100%;
+background-color: rgba(255,255,255,.75);
+
+
+}
+.container-header{ 
+  	display: flex;
+  	margin: 10% 4% 6% 5%;
+  	align-items: flex-end; 
+	justify-content: space-between;
+
+}
+
+
+
 
 main{
-	width: 100%;
-
-	
+	padding-top:23%;
 }
 
 
-.container{ 
-  	display: flex;
-  	margin: 10% 4% 6% 4%;
-  	align-items: flex-end; 
-	display: flex; 
-	justify-content: space-between;
+
+
+
+@media only all and (min-width: 400px){
+	.container-header{
+		margin: 10% 4% 6% 5%;}
 }
+
+@media only all and (min-width: 768px){
+	.container-header{ 
+  	margin: 5% 4% 4% 5%;}
+}
+
 
 .website-name{
 	font-family: 'Roboto', sans-serif;
@@ -36,61 +61,189 @@ main{
 }
 
 
-.intro-text{
-	width: 90%;
-	margin-left: 4%;
-	font-family: 'Yrsa', serif;
-	font-size: 40px;
-	letter-spacing: -3%
-	line-height:1.10;
-	font-weight:300;
-	padding-bottom:30%;
+@media only all and (min-width: 768px){
+
+	
+	.website-name{
+	font-size: 72px;
+
+	}
+
+	.website-tagline{
+	font-size: 24px;
+	}
+
+
 }
+
+
+.container-main{
+	position: relative;
+	width: 100%;
+	display: flex;
+flex-direction: column;
+align-items: center;
+
+
+}
+.content-main{
+	width: 90%;
+	overflow: initial;
+	display: flex;
+flex-direction: column;
+align-items: center;
+	
+
+	
+}
+
+.intro-text{
+padding-bottom: 50%;
+}
+
+.intro-text-text{
+	
+font-family: 'Yrsa', serif;
+font-size: 40px;
+font-weight:300;
+letter-spacing: -3%
+line-height:1.10;
+
+
+}
+
+@media all and (min-width: 768px){
+	.intro-text-text{
+		font-size:72px;}
+
+	}
+
+@media all and (min-width: 1012px){
+	.intro-text-text{
+		font-size:100px;}
+
+	}
+@media all and (min-width: 1440px){
+	.intro-text-text{
+		font-size:130px;}
+
+	}
+
+
+
 
 .creative-process{
 background-color: rgba(189,16,224,.05);
-width: 100%;
-left: 0;
-padding-bottom: 100%;
+/*padding-bottom: 20%;*/
 
 }
 
-.charts-header-text{
-	font-family: 'Yrsa', serif;
-	font-size: 24px;
+.reg-day{
+background-color: rgba(208,2,27,.05); 	
 
 }
 
-.creative-process-container{
+.shots{
+
+background-color: rgba(126,211,33,.05); 	
+
+}
+
+
+
+
+.container-charts-header{
 width:100%;
 align-items: flex-end; 
 display: flex; 
 justify-content: center;
-/*border: solid 1px black;
-*/padding: 10% 0 10% 0;
+/*border: solid 1px black;*/
+padding: 12% 0 10% 0;
 }
+
+
+.charts-header-text{
+font-family: 'Yrsa', serif;
+font-size: 24px;
+font-weight:300;
+}
+
+.container-infographic{
+width:100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+/*border: solid 1px black;
+*/
+}
+
+
+.full-circle-container{
+width:100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 20%;
+}
+
+.full-circle {
+
+position: relative;
+border-radius: 50%;
+width: 90%;
+height: auto;
+padding-top: 90%;
+background: rgb(233,134,230);
+}
+
+@media only all and (min-width: 768px){
+	.full-circle {
+		width: 70%;
+height: auto;
+padding-top: 70%;
+}
+}
+
 
 .box-container{
- display: -webkit-box;
- display: -moz-box;
- display: -ms-flexbox;
- display: -webkit-flex;
- display: flex;
+width: 100%;
+display: flex;
+flex-direction: column;}
+
+.box{
+	
+width: 30%;
+
 
 
 
 
 }
-.box-dicking-around{
-width: 20%;
-padding: 2% 1%;
+
+.dicking-around-color{
 border: solid 4px #E986E6;
-margin-left:60%;
+margin-top: 4%;
+margin-left: 4%;
+align-self: flex-start;
+
+
+
+
+}
+.makingshit-color{
+border: solid 4px black;
+color:#E986E6;
+align-self: flex-end;
+margin-right: 4%;
+margin-bottom: 4%;
+
+
+
 }
 
 .text-box{
 font-family: 'Roboto', sans-serif;
-font-size: 16px;
+font-size: 20px;
 font-weight: 900;
 text-transform: uppercase;
 text-align: center;
@@ -98,65 +251,8 @@ text-align: center;
 }
 
 
-.full-circle-container{
-width:100%;
-align-items: flex-end; 
-display: flex; 
-justify-content: center;
-/*border: solid 1px black;
-*/padding: 6% 0;
-
-}
-.full-circle {
-position: relative;
-border-radius: 50%;
-width: 80%;
-height: auto;
-padding-top: 80%;
-background: #E986E6;
-}
-.line1 {
-width: 200px;
-height: 0px;
-border-bottom: 8px solid black;
--webkit-transform:
-translateY(5%)
-translateX(70%)
-rotate(50deg); 
-position: absolute;
-}
-
-.box-making-shit{
-width: 20%;
-padding: 2% 1%;
-border: solid 4px black;
-margin-left:4%;
-}
-.text-making-shit{
-	color: #E986E6;
-}
 
 
- 
-
-
-
-.reg-day{
-	
-background-color: rgba(208,2,27,.05); 	
-width: 100%;
-left: 0;
-min-height: 600px;
-	
-	 
-}
-.shots{
-background-color: rgba(126,211,33,.05); 	
-width: 100%;
-left: 0;
-min-height: 600px;
-	
-}
 
 
 
