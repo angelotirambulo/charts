@@ -1,20 +1,20 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Charts</title>
-        <meta charset='utf-8'>
-        <meta name="viewport" content="width=device-width, initial-scale=1">    
-        <link rel="stylesheet" href="styles/reset.css">
-        <link rel="stylesheet" href="styles/main.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100i,300,300i,400,400i,500,500i,700,700i,900,900i|Yrsa:300,400,500,600,700" rel="stylesheet">
-    </head>
-    <body>
- 
-        <div class="headerwrap" >
 
-            <div class="container-header">
-                <div class="container-websitename-logo">
-                    <h1 class="website-name">
+<head>
+    <title>Charts</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.1.0/nouislider.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100i,300,300i,400,400i,500,500i,700,700i,900,900i|Yrsa:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="headerwrap">
+        <div class="container-header">
+            <div class="container-websitename-logo">
+                <h1 class="website-name">
                         Charts 
                         <p class="website-tagline">about nothing/everything
                         </div>
@@ -24,7 +24,9 @@
             </div>
         </div>
         </header>
+    
     <main>
+
         <div class="container-main">
             <div class="content-main intro-text">
                 <p class="intro-text-text">
@@ -40,65 +42,100 @@
                     </p>
                 </div>
 
-
-
                 <div class="container-infographic">
-
                     <div class="box-container">
-                        <div class="box dicking-around-color">
+                        <div class="box dicking-around-color hide">
                             <p class="text-box">Dicking Around </p>
                         </div>
                     </div>
 
                     <div class="full-circle-container">
-                      
-                      <canvas id="myChart" width="400" height="400"></canvas>
+                        <canvas id="myChart" width="500" height="500"></canvas>
                     </div>
 
                     <div class="box-container">
-                        <div class="box makingshit-color">
+                        <div class="box makingshit-color hide">
                             <p class="text-box">Making Shit</p>
                         </div>
+                    </div>
 
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-main reg-day">
+            <div class="content-main">
+                <div class=" container-charts-header">
+                    <p class="charts-header-text"> A Regular Day</p>
+                </div>
+                <div class="container-infographic">
+                    <canvas id="myLineChart" width="500" height="400"></canvas>
+                </div>
+            </div>
+        </div>
 
+        <div class="container-main shots">
+            <div class="content-main">
+                
+                <div class=" container-charts-header">
+                    <p class="charts-header-text"> The effect of shots</p>
+                </div>
+
+                <div class="container-infographic">
+                    <div class="slider-image-container">
+                    
+                        <div class="stacks">
+                          <div class="stack show"><img src="source/dollars.svg" alt="dollars"></div>
+                          <div class="stack show"><img src="source/dollars.svg" alt="dollars"></div>
+                          <div class="stack show"><img src="source/dollars.svg" alt="dollars"></div>
+                          <div class="stack show"><img src="source/dollars.svg" alt="dollars"></div>
+                          <div class="stack show"><img src="source/dollars.svg" alt="dollars"></div>
+                          <div class="stack show"><img src="source/dollars.svg" alt="dollars"></div>
+                          <div class="stack show"><img src="source/dollars.svg" alt="dollars"></div>
+                          <div class="stack show"><img src="source/dollars.svg" alt="dollars"></div>
+                          <div class="stack show"><img src="source/dollars.svg" alt="dollars"></div>
+                          <div class="stack show"><img src="source/dollars.svg" alt="dollars"></div>
+                          <div class="stack show"><img src="source/dollars.svg" alt="dollars"></div>
+                          <div class="stack show"><img src="source/dollars.svg" alt="dollars"></div>
+                          <div class="stack show"><img src="source/dollars.svg" alt="dollars"></div>
+                          <div class="stack show"><img src="source/dollars.svg" alt="dollars"></div>
+                          <div class="stack show"><img src="source/dollars.svg" alt="dollars"></div>
+                          <div class="stack show"><img src="source/dollars.svg" alt="dollars"></div>
+                        </div>
+
+                        <div class ="shots hide">
+                        </div>
+                    </div>
+
+                    <div class="time-slider-container">
+                        <div id=container>
+                            <div id=slider></div>
+                        </div>
+                        <div class="time-tile">
+                            <div class="leftvalue"><span>0</span></div>
+                        </div>
+                        <div class="time-tile">
+                            <div class="rightvalue"> <span>a shit ton</span></dv>
+                        </div>
                     </div>
                 </div>
-                 </div>
-
-
-
-
-
-
-        </div>
-        </div>
-    <div class="container-main reg-day">
-        <div class="content-main">
-            <div class=" container-charts-header">
-                <p class="charts-header-text"> A Regular Day</p>
-            </div>
-            <div class="container-infographic">
-            <canvas id="myLineChart" width="400" height="400"></canvas>
-                
             </div>
         </div>
-    </div>
-    <div class="container-main shots">
-        <div class="content-main">
-            <div class=" container-charts-header">
-                <p class="charts-header-text"> The effect of shots</p>
-            </div>
-            <div class="container-infographic">
-                <img src="source/shots.png">
-            </div>
-        </div>
-    </div>
+    
     </main>
+
 <footer>
 </footer>
+
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js'></script>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js'></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.1.0/nouislider.js'></script>
+
+
 
     <script src='javascript/main.js'></script>
 </body>
