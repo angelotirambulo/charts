@@ -160,73 +160,52 @@ var myLineChart = new Chart(ctx, {
 
 function removeStack() {
     $('.stack.show').last().addClass('hide').removeClass('show');
+    console.log('remove');
 }
 
  function addStack() {
     $('.stack.hide').first().addClass('show').removeClass('hide');
+    console.log('add');
 }
 
 var slider = document.getElementById('slider');
  
 
 noUiSlider.create(slider, {
-    start: [24],
+    start: [0],
     step: 1,
     range: {
         'min': [0],
-        'max': [48],
+        'max': [18],
     }
 });
 
 var rangeSliderValueElement = document.getElementById('slider-range-value');
 
 
-slider.noUiSlider.on('update', function(values, handle) {
-    // rangeSliderValueElement.innerHTML = values[handle];
-    console.log(values[handle])
-    
-    var curVal =values[handle];
+var curVal;
 
+slider.noUiSlider.on('update', function(values, handle) {
     var newVal = values[handle];
 
+    if (curVal === undefined) {
+        console.log('undefined');
+        curVal = 0;
+    }
+
     if (curVal < newVal) {
-        console.log('right', curVal, newVal);
-        curVal = newVal;
+        console.log('right-1', curVal, newVal);
+        curVal = values[handle];
+        console.log('right-2', curVal, newVal);
         removeStack();
 
     }
-    if (curVal > newVal) {
-        console.log('left', curVal, newVal);
-        curVal = newVal;
+    else if (curVal > newVal) {
+        console.log('left-1', curVal, newVal);
+        curVal = values[handle];
+        console.log('left-2', curVal, newVal);
         addStack();
 
     }
 
 });
-
-
-// function removeStack() {
-//     $('.stack.show').last().addClass('hide').removeClass('show');
-// }
-
-// function addStack() {
-//     $('.stack.hide').last().addClass('show').removeClass('hide');
-// }
-// }
-
-// $('.remove').on('slide', removeStack);
-// $('.add').on('slide', addStack); 
-
-
-
-
-// function removeStack() {
-//        $('.stack.show').last().addClass('hide').removeClass('show');
-//    }
-
-//    function addStack() {
-//        $('.stack.hide').last().addClass('show').removeClass('hide');
-//    }
-
-//    $('.remove').on('slider', removeStack);
-//    $('.add').on('slider', addStack);

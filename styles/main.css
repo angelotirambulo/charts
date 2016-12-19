@@ -307,3 +307,12 @@ img:not(.png) {
     justify-content: flex-end;
     display: block;
 }
+
+
+.stacks .hide {
+    display: none;
+}
+
+.stacks .show {
+    display: block;
+}
