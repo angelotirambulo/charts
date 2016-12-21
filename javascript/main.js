@@ -1,3 +1,21 @@
+// start of waypoint sticky for header
+
+let $headerwrap = $('.headerwrap')
+let $headerwrap2 = $('.headerwrap2')
+let $showafter=$('.showafterthis')
+
+
+$('.showafterthis').waypoint(function() {
+  if ($(".headerwrap2").is(":hidden")) {
+    $(".headerwrap2").slideDown(100);
+  } 
+  else {
+        $(".headerwrap2").slideUp(100);
+    }
+});
+//end of waypoint sticky for header
+
+
 // Start of Pie Chart JS
 
 var ctx = document.getElementById("myChart");
@@ -92,18 +110,18 @@ var data = {
         label: "A Regular Day",
         fill: false,
         lineTension: 0.1,
-        backgroundColor: "rgba(208,2,27,0.4)",
-        borderColor: "rgba(208,2,27,1)",
+        backgroundColor: "rgba(208,2,27,0)",
+        borderColor: "rgba(208,2,27,0)",
         borderCapStyle: 'butt',
         borderDash: [],
         borderDashOffset: 0.0,
         borderJoinStyle: 'miter',
-        pointBorderColor: "rgba(208,2,27,1)",
+        pointBorderColor: "rgba(208,2,27,0)",
         pointBackgroundColor: "#fff",
         pointBorderWidth: 1,
         pointHoverRadius: 5,
-        pointHoverBackgroundColor: "rgba(75,192,192,1)",
-        pointHoverBorderColor: "rgba(220,220,220,1)",
+        pointHoverBackgroundColor: "rgba(75,192,192,0)",
+        pointHoverBorderColor: "rgba(220,220,220,0)",
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
@@ -118,8 +136,15 @@ var options = {
         display: false
     },
 
+
+
+    // timeline
+
+
+
     legend: {
-        display: false
+        display: false,
+        position:'bottom'
     },
 
     scales: {
@@ -156,16 +181,95 @@ var myLineChart = new Chart(ctx, {
 
 // End of LineChart
 
-// // Here begins LEON GERSON's time slider example
+// start of reg-day
+const content= $('.content');
+const co_first= $('.v1');
+const co_second= $('.v2');
+const co_static= $('.content-static');
 
-function removeStack() {
-    $('.stack.show').last().addClass('hide').removeClass('show');
-    console.log('remove');
+//  co_statict=new Waypoint.Sticky({
+
+// element: $('.content-static')[0]
+
+// })
+
+// console.log(co_static)
+
+// if($(co_static).length > 0) {
+//  console.log('here')
+//  console.log(Waypoint)
+//     var sticky = new Waypoint.Sticky({
+//         element: co_static[0]
+//     });
+// }
+
+$(window).scroll(onScroll);
+const co_static_top = co_static.offset().top;
+let isStuck = false;
+let sticky;
+
+const og_height = $('.content-main.content-static').height() +'px !important';
+const style = document.createElement('style');
+style.innerHTML = '.og_height { height: '+og_height+'; }';
+document.head.appendChild(style)
+
+function onScroll(e) {
+    const scrollPos = $(window).scrollTop();
+    console.clear()
+
+    if (scrollPos > co_static_top && !isStuck) {
+        isStuck = true;
+
+        co_static.css('height', $(window).height() +'px')
+
+        sticky = new Waypoint.Sticky({
+            element: co_static[0]
+        });
+
+        $('.container-main.reg-day .sticky-wrapper').addClass('og_height');
+
+        // co_static.css({
+        //  position: 'fixed',
+        //  top: '0',
+        //  left: '0',
+        //  width: '100%',
+        //  height: '100%',
+        //  overflow: 'auto',
+        //  zIndex: 2,
+        // });
+    }
+    else if (scrollPos < co_static_top) {
+        isStuck = false;
+        co_static.css('height', 'initial');
+        sticky.destroy();
+    }
 }
 
- function addStack() {
-    $('.stack.hide').first().addClass('show').removeClass('hide');
-    console.log('add');
+co_static.scroll(onStaticScroll);
+
+function onStaticScroll() {
+    if (isStuck === false) return;
+    console.clear();
+    let height = 0;
+    $(this).children().each((idx, el) => {
+        height += $(el).outerHeight();
+    }, 0)
+    console.log('here', $(this).scrollTop(), $(window).scrollTop(), height)
+}
+
+// End of reg day
+
+// // Here begins LEON GERSON's time slider example
+
+function toRight() {
+    $('.money').first().addClass('hide').removeClass('show');
+    $('.booze').first().addClass('show').removeClass('hide');
+
+}
+
+ function toLeft() {
+    $('.money').last().addClass('show').removeClass('hide');
+    $('.booze').last().addClass('hide').removeClass('show');
 }
 
 var slider = document.getElementById('slider');
@@ -176,7 +280,7 @@ noUiSlider.create(slider, {
     step: 1,
     range: {
         'min': [0],
-        'max': [18],
+        'max': [18]
     }
 });
 
@@ -189,7 +293,7 @@ slider.noUiSlider.on('update', function(values, handle) {
     var newVal = values[handle];
 
     if (curVal === undefined) {
-        console.log('undefined');
+        // console.log('undefined');
         curVal = 0;
     }
 
@@ -197,15 +301,54 @@ slider.noUiSlider.on('update', function(values, handle) {
         console.log('right-1', curVal, newVal);
         curVal = values[handle];
         console.log('right-2', curVal, newVal);
-        removeStack();
+        toRight();
 
     }
     else if (curVal > newVal) {
         console.log('left-1', curVal, newVal);
         curVal = values[handle];
         console.log('left-2', curVal, newVal);
-        addStack();
+        toLeft();
 
     }
 
 });
+
+
+
+//time line
+
+(function() {
+
+  'use strict';
+
+  // define variables
+  var items = document.querySelectorAll(".timeline li");
+
+  // check if an element is in viewport
+  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+  function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function callbackFunc() {
+    for (var i = 0; i < items.length; i++) {
+      if (isElementInViewport(items[i])) {
+        items[i].classList.add("in-view");
+      }
+    }
+  }
+
+  // listen for events
+  window.addEventListener("load", callbackFunc);
+  window.addEventListener("resize", callbackFunc);
+  window.addEventListener("scroll", callbackFunc);
+
+})();
+
