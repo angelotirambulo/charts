@@ -167,7 +167,7 @@ main {
     flex-direction: column;
     align-items: center;
 }
-
+/*---------Intro tezt------------*/
 .intro-text {
     padding-bottom: 30%;
 }
@@ -198,6 +198,7 @@ main {
         font-size: 130px;
     }
 }
+/*---------end tezt------------*/
 
 .creative-process {
     background-color: rgba(189, 16, 224, .05);
@@ -258,6 +259,8 @@ main {
 }
 
 @media only all and (min-width: 768px) {
+    
+
     .full-circle-container {
         width: 80%;
         display: flex;
@@ -276,7 +279,7 @@ main {
 }
 
 .box-container {
-    width: 100%;
+    width: 75%;
     display: flex;
     flex-direction: column;
 }
@@ -562,9 +565,11 @@ img:not(.png) {
 time {
   display: block;
   font-size: 1.2rem;
-  font-weight: bold;
+ 
   margin-bottom: 8px;
 }
+
+
 
 
 /* EFFECTS

@@ -81,9 +81,7 @@ var data = {
     }]
 };
 var options = {
-    toolTip: {
-
-    },
+    
 
 };
 
