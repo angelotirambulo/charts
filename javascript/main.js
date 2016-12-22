@@ -30,7 +30,7 @@ function hideAll() {
 }
 
 Chart.defaults.global.hover.onHover = function(x) {
-    console.log(x)
+    // console.log(x)
     var i = x[0]._index;
 
     var DA = $(".dicking-around-color");
@@ -212,7 +212,7 @@ document.head.appendChild(style)
 
 function onScroll(e) {
     const scrollPos = $(window).scrollTop();
-    console.clear()
+    // console.clear()
 
     if (scrollPos > co_static_top && !isStuck) {
         isStuck = true;
@@ -237,7 +237,9 @@ function onScroll(e) {
     } else if (scrollPos < co_static_top) {
         isStuck = false;
         co_static.css('height', 'initial');
-        sticky.destroy();
+        if (sticky) {
+            sticky.destroy();
+        }
     }
 }
 
@@ -245,12 +247,12 @@ co_static.scroll(onStaticScroll);
 
 function onStaticScroll() {
     if (isStuck === false) return;
-    console.clear();
+    // console.clear();
     let height = 0;
     $(this).children().each((idx, el) => {
         height += $(el).outerHeight();
     }, 0)
-    console.log('here', $(this).scrollTop(), $(window).scrollTop(), height)
+    // console.log('here', $(this).scrollTop(), $(window).scrollTop(), height)
 }
 
 // End of reg day
