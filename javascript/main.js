@@ -2,14 +2,13 @@
 
 let $headerwrap = $('.headerwrap')
 let $headerwrap2 = $('.headerwrap2')
-let $showafter=$('.showafterthis')
+let $showafter = $('.showafterthis')
 
 
 $('.showafterthis').waypoint(function() {
-  if ($(".headerwrap2").is(":hidden")) {
-    $(".headerwrap2").slideDown(100);
-  } 
-  else {
+    if ($(".headerwrap2").is(":hidden")) {
+        $(".headerwrap2").slideDown(100);
+    } else {
         $(".headerwrap2").slideUp(100);
     }
 });
@@ -81,7 +80,7 @@ var data = {
     }]
 };
 var options = {
-    
+
 
 };
 
@@ -142,7 +141,7 @@ var options = {
 
     legend: {
         display: false,
-        position:'bottom'
+        position: 'bottom'
     },
 
     scales: {
@@ -180,10 +179,10 @@ var myLineChart = new Chart(ctx, {
 // End of LineChart
 
 // start of reg-day
-const content= $('.content');
-const co_first= $('.v1');
-const co_second= $('.v2');
-const co_static= $('.content-static');
+const content = $('.content');
+const co_first = $('.v1');
+const co_second = $('.v2');
+const co_static = $('.content-static');
 
 //  co_statict=new Waypoint.Sticky({
 
@@ -206,9 +205,9 @@ const co_static_top = co_static.offset().top;
 let isStuck = false;
 let sticky;
 
-const og_height = $('.content-main.content-static').height() +'px !important';
+const og_height = $('.content-main.content-static').height() + 'px !important';
 const style = document.createElement('style');
-style.innerHTML = '.og_height { height: '+og_height+'; }';
+style.innerHTML = '.og_height { height: ' + og_height + '; }';
 document.head.appendChild(style)
 
 function onScroll(e) {
@@ -218,7 +217,7 @@ function onScroll(e) {
     if (scrollPos > co_static_top && !isStuck) {
         isStuck = true;
 
-        co_static.css('height', $(window).height() +'px')
+        co_static.css('height', $(window).height() + 'px')
 
         sticky = new Waypoint.Sticky({
             element: co_static[0]
@@ -235,8 +234,7 @@ function onScroll(e) {
         //  overflow: 'auto',
         //  zIndex: 2,
         // });
-    }
-    else if (scrollPos < co_static_top) {
+    } else if (scrollPos < co_static_top) {
         isStuck = false;
         co_static.css('height', 'initial');
         sticky.destroy();
@@ -265,21 +263,23 @@ function toRight() {
     $('.stack').children('.show').first().addClass('hide');
     $('.stack').children('.show').first().removeClass('show');
     $('.stack').children('.booze.hide').first().removeClass('hide');
-    
- 
+
+
 }
 
- function toLeft() {
-    // $('.stack').children('.hide').last().addClass('show');
-    // $('.stack').children('.hide').last().removeClass('hide');
+function toLeft() {
+    $('.stack').children('.show').last().addClass('hide');
+    $('.stack').children('.hide').last().removeClass('hide');
+    // $('.stack').children('.money').last().removeClass('hide');
+    // $('.stack').children('.booze').last().addClass('show');
 
 
-   
-   
+
+
 }
 
 var slider = document.getElementById('slider');
- 
+
 
 noUiSlider.create(slider, {
     start: [0],
@@ -309,8 +309,7 @@ slider.noUiSlider.on('update', function(values, handle) {
         console.log('right-2', curVal, newVal);
         toRight();
 
-    }
-    else if (curVal > newVal) {
+    } else if (curVal > newVal) {
         console.log('left-1', curVal, newVal);
         curVal = values[handle];
         console.log('left-2', curVal, newVal);
@@ -326,35 +325,36 @@ slider.noUiSlider.on('update', function(values, handle) {
 
 (function() {
 
-  'use strict';
+    'use strict';
 
-  // define variables
-  var items = document.querySelectorAll(".timeline li");
+    // define variables
+    var items = document.querySelectorAll(".timeline li");
 
-  // check if an element is in viewport
-  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
-  function isElementInViewport(el) {
-    var rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-
-  function callbackFunc() {
-    for (var i = 0; i < items.length; i++) {
-      if (isElementInViewport(items[i])) {
-        items[i].classList.add("in-view");
-      }
+    // check if an element is in viewport
+    // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
     }
-  }
 
-  // listen for events
-  window.addEventListener("load", callbackFunc);
-  window.addEventListener("resize", callbackFunc);
-  window.addEventListener("scroll", callbackFunc);
+    function callbackFunc() {
+        for (var i = 0; i < items.length; i++) {
+            if (isElementInViewport(items[i])) {
+                items[i].classList.add("in-view");
+            }
+        }
+    }
+
+  
+    // listen for events
+    window.addEventListener("load", callbackFunc);
+    window.addEventListener("resize", callbackFunc);
+    window.addEventListener("scroll", callbackFunc);
+ 
 
 })();
-
