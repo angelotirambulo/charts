@@ -324,7 +324,23 @@ button {
 
 .time-slider-container {
     width: 80%;
+    border: 1px solid black;
 }
+
+.time-slider-des{
+    width: 50%;
+    display: flex;
+
+}
+.leftvalue{
+    justify-content: flex-start;
+}
+
+.rightvalue{
+    justify-content: flex-end;
+}
+
+
 
 .slider-image-container {
     /*  border:1px solid red;*/

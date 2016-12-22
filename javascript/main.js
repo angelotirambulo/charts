@@ -260,14 +260,22 @@ function onStaticScroll() {
 // // Here begins LEON GERSON's time slider example
 
 function toRight() {
-    $('.money').first().addClass('hide').removeClass('show');
-    $('.booze').first().addClass('show').removeClass('hide');
+    console.log($('.stack').children('.show'))
 
+    $('.stack').children('.show').first().addClass('hide');
+    $('.stack').children('.show').first().removeClass('show');
+    $('.stack').children('.booze.hide').first().removeClass('hide');
+    
+ 
 }
 
  function toLeft() {
-    $('.money').last().addClass('show').removeClass('hide');
-    $('.booze').last().addClass('hide').removeClass('show');
+    // $('.stack').children('.hide').last().addClass('show');
+    // $('.stack').children('.hide').last().removeClass('hide');
+
+
+   
+   
 }
 
 var slider = document.getElementById('slider');
