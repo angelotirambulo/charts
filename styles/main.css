@@ -291,7 +291,7 @@ main {
 }
 
 .hide {
-    visibility: hidden;
+    display: none;
 }
 
 .dicking-around-color {
@@ -349,25 +349,23 @@ button {
 }
 
 .stacks {
-    display: flex;
-    flex-wrap: wrap;
     width: 80%;
     margin: 0 auto;
-    /*  border: 1px solid red;*/
+}
+
+.stack-row {
+    display: flex;
+    height: 80px;
 }
 
 .stack {
-    height: 10%;
+    /* height: 10%; */
     width: 20%;
     /*  background-color: green;
   border: 1px solid black;*/
-    margin: 5px;
-    text-align: center;
+    /* margin: 5px;
+    text-align: center; */
     /*  border: 1px solid red;*/
-}
-
-.show {
-    display: block;
 }
 
 .show {
