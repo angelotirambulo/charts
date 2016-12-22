@@ -279,6 +279,9 @@ function toRight() {
     //     .next().addClass('stack-active');
 }
 
+
+
+
 function toLeft() {
     //vanilla/plain JS faster
     const allBoozeElements = document.querySelectorAll('.booze.stack-active');
@@ -293,46 +296,71 @@ function toLeft() {
     // $('.booze.stack-active')
     //     .last().removeClass('stack-active')
     //     .prev().addClass('stack-active');
+    
+}
+
+
+
+
+function makeItRain() {
+    $('.booze.stack-active').removeClass('stack-active');
+    $('.money').addClass('stack-active');
+}
+
+function makeItDrain() {
+    $('.money.stack-active').removeClass('stack-active');
+    $('.booze').addClass('stack-active');
 }
 
 var slider = document.getElementById('slider');
-
 
 noUiSlider.create(slider, {
     start: [0],
     step: 1,
     range: {
         'min': [0],
-        'max': [40]
+        'max': [30]
     }
 });
+
+const sliderMax = slider.noUiSlider.options.range.max[0];
+
 
 var rangeSliderValueElement = document.getElementById('slider-range-value');
 
 
 var curVal;
+var newVal;
 
 slider.noUiSlider.on('update', function(values, handle) {
-    var newVal = values[handle];
+    newVal = Number(values[handle]);
 
     if (curVal === undefined) {
         // console.log('undefined');
         curVal = 0;
     }
 
+
     if (curVal < newVal) {
         console.log('right-1', curVal, newVal);
-        curVal = values[handle];
+
+        curVal = Number(values[handle]);
         console.log('right-2', curVal, newVal);
         toRight();
-
+        if (curVal === sliderMax) {
+            makeItDrain();
+        }
     } else if (curVal > newVal) {
         console.log('left-1', curVal, newVal);
-        curVal = values[handle];
+        curVal = Number(values[handle]);
         console.log('left-2', curVal, newVal);
         toLeft();
-
+        if (curVal === 0) {
+            makeItRain();
+        } 
     }
+
+
 
 });
 
