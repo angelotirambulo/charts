@@ -1,3 +1,10 @@
+//adds spinner to ensure all page elelments have loaded
+
+$(window).on('load', function() {
+    $('.loading').css({'display':'none'});
+});
+
+
 // start of waypoint sticky for header
 
 let $headerwrap = $('.headerwrap')
@@ -257,18 +264,35 @@ function onStaticScroll() {
 
 // End of reg day
 
-// // Here begins LEON GERSON's time slider example
-
 function toRight() {
-    $('.money.stack-active')
-        .first().removeClass('stack-active')
-        .next().addClass('stack-active');
+    //vanilla/plain JS faster
+    const firstStackElememt = document.querySelector('.money.stack-active');
+
+    if (firstStackElememt) {
+        firstStackElememt.nextElementSibling.classList.add('stack-active');
+        firstStackElememt.classList.remove('stack-active');
+    }
+
+/*** Works, but jQuery too slow in DOM manipulation and causes bugs ***/
+    // $('.money.stack-active')
+    //     .first().removeClass('stack-active')
+    //     .next().addClass('stack-active');
 }
 
 function toLeft() {
-    $('.booze.stack-active')
-        .last().removeClass('stack-active')
-        .prev().addClass('stack-active');
+    //vanilla/plain JS faster
+    const allBoozeElements = document.querySelectorAll('.booze.stack-active');
+    const lastBoozeElement = allBoozeElements[allBoozeElements.length -1];
+
+    if (lastBoozeElement) {
+        lastBoozeElement.previousElementSibling.classList.add('stack-active');
+        lastBoozeElement.classList.remove('stack-active');
+    }
+
+/*** Works, but jQuery too slow in DOM manipulation and causes bugs ***/
+    // $('.booze.stack-active')
+    //     .last().removeClass('stack-active')
+    //     .prev().addClass('stack-active');
 }
 
 var slider = document.getElementById('slider');
@@ -279,7 +303,7 @@ noUiSlider.create(slider, {
     step: 1,
     range: {
         'min': [0],
-        'max': [18]
+        'max': [40]
     }
 });
 
