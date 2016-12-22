@@ -1,3 +1,10 @@
+//adds spinner to ensure all page elelments have loaded
+
+$(window).on('load', function() {
+    $('.loading').css({'display':'none'});
+});
+
+
 // start of waypoint sticky for header
 
 let $headerwrap = $('.headerwrap')
@@ -30,7 +37,7 @@ function hideAll() {
 }
 
 Chart.defaults.global.hover.onHover = function(x) {
-    console.log(x)
+    // console.log(x)
     var i = x[0]._index;
 
     var DA = $(".dicking-around-color");
@@ -212,7 +219,7 @@ document.head.appendChild(style)
 
 function onScroll(e) {
     const scrollPos = $(window).scrollTop();
-    console.clear()
+    // console.clear()
 
     if (scrollPos > co_static_top && !isStuck) {
         isStuck = true;
@@ -237,7 +244,9 @@ function onScroll(e) {
     } else if (scrollPos < co_static_top) {
         isStuck = false;
         co_static.css('height', 'initial');
-        sticky.destroy();
+        if (sticky) {
+            sticky.destroy();
+        }
     }
 }
 
@@ -245,77 +254,113 @@ co_static.scroll(onStaticScroll);
 
 function onStaticScroll() {
     if (isStuck === false) return;
-    console.clear();
+    // console.clear();
     let height = 0;
     $(this).children().each((idx, el) => {
         height += $(el).outerHeight();
     }, 0)
-    console.log('here', $(this).scrollTop(), $(window).scrollTop(), height)
+    // console.log('here', $(this).scrollTop(), $(window).scrollTop(), height)
 }
 
 // End of reg day
 
-// // Here begins LEON GERSON's time slider example
-
 function toRight() {
-    console.log($('.stack').children('.show'))
+    //vanilla/plain JS faster
+    const firstStackElememt = document.querySelector('.money.stack-active');
 
-    $('.stack').children('.show').first().addClass('hide');
-    $('.stack').children('.show').first().removeClass('show');
-    $('.stack').children('.booze.hide').first().removeClass('hide');
+    if (firstStackElememt) {
+        firstStackElememt.nextElementSibling.classList.add('stack-active');
+        firstStackElememt.classList.remove('stack-active');
+    }
 
-
+/*** Works, but jQuery too slow in DOM manipulation and causes bugs ***/
+    // $('.money.stack-active')
+    //     .first().removeClass('stack-active')
+    //     .next().addClass('stack-active');
 }
 
+
+
+
 function toLeft() {
-    $('.stack').children('.show').last().addClass('hide');
-    $('.stack').children('.hide').last().removeClass('hide');
-    // $('.stack').children('.money').last().removeClass('hide');
-    // $('.stack').children('.booze').last().addClass('show');
+    //vanilla/plain JS faster
+    const allBoozeElements = document.querySelectorAll('.booze.stack-active');
+    const lastBoozeElement = allBoozeElements[allBoozeElements.length -1];
+
+    if (lastBoozeElement) {
+        lastBoozeElement.previousElementSibling.classList.add('stack-active');
+        lastBoozeElement.classList.remove('stack-active');
+    }
+
+/*** Works, but jQuery too slow in DOM manipulation and causes bugs ***/
+    // $('.booze.stack-active')
+    //     .last().removeClass('stack-active')
+    //     .prev().addClass('stack-active');
+    
+}
 
 
 
 
+function makeItRain() {
+    $('.booze.stack-active').removeClass('stack-active');
+    $('.money').addClass('stack-active');
+}
+
+function makeItDrain() {
+    $('.money.stack-active').removeClass('stack-active');
+    $('.booze').addClass('stack-active');
 }
 
 var slider = document.getElementById('slider');
-
 
 noUiSlider.create(slider, {
     start: [0],
     step: 1,
     range: {
         'min': [0],
-        'max': [18]
+        'max': [30]
     }
 });
+
+const sliderMax = slider.noUiSlider.options.range.max[0];
+
 
 var rangeSliderValueElement = document.getElementById('slider-range-value');
 
 
 var curVal;
+var newVal;
 
 slider.noUiSlider.on('update', function(values, handle) {
-    var newVal = values[handle];
+    newVal = Number(values[handle]);
 
     if (curVal === undefined) {
         // console.log('undefined');
         curVal = 0;
     }
 
+
     if (curVal < newVal) {
         console.log('right-1', curVal, newVal);
-        curVal = values[handle];
+
+        curVal = Number(values[handle]);
         console.log('right-2', curVal, newVal);
         toRight();
-
+        if (curVal === sliderMax) {
+            makeItDrain();
+        }
     } else if (curVal > newVal) {
         console.log('left-1', curVal, newVal);
-        curVal = values[handle];
+        curVal = Number(values[handle]);
         console.log('left-2', curVal, newVal);
         toLeft();
-
+        if (curVal === 0) {
+            makeItRain();
+        } 
     }
+
+
 
 });
 
