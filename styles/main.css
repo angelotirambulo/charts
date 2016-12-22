@@ -291,7 +291,7 @@ main {
 }
 
 .hide {
-    display: none;
+    visibility: hidden;
 }
 
 .dicking-around-color {
@@ -351,6 +351,15 @@ button {
 .stacks {
     width: 80%;
     margin: 0 auto;
+}
+
+.money,
+.booze {
+    display: none;
+}
+
+.stack-active {
+    display: block;
 }
 
 .stack-row {
@@ -422,14 +431,6 @@ img:not(.png) {
     justify-content: flex-end;
     display: block;
 }
-
-/*.stacks .hide {
-    display: none;
-}
-.stacks .show {
-    display: block;
-}*/
-
 /*reg day styles */
 .basic {
     height: 1000px;
